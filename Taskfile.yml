@@ -1,0 +1,26 @@
+version: '3'
+
+env:
+  PORT: 3000
+  CONTAINER_NAME: webpagecontainer
+
+tasks:
+  download-dependencies:
+    cmds:
+      - go mod tidy
+
+  build-bin:
+    cmds:
+      - go build -o myapp
+
+  build-container:
+    cmds:
+      - docker build . -t {{.CONTAINER_NAME}}
+
+  run-container:
+    cmds:
+      - docker run --rm -p{{.PORT}}:3000 {{.CONTAINER_NAME}}
+
+  templ:
+    cmds:
+      - templ generate -watch

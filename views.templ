@@ -1,0 +1,352 @@
+package main
+
+type RepoLink struct {
+	Repo templ.SafeURL
+	Img string
+	Name string
+}
+
+type PageData struct {
+    ContainersAndKubernetes []RepoLink
+    Devops []RepoLink
+    Books []RepoLink
+    Books2 []RepoLink
+    WantToRead []RepoLink
+}
+
+templ page(pg PageData){
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Piotr Wera Curriculum</title>
+  <meta name="author" content="Piotr Wera"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+    rel="stylesheet"/>
+  <link rel="stylesheet" type='text/css' media='all' href="/static/css/webslides.css"/>
+  <link rel="stylesheet" type="text/css" media="all" href="/static/css/svg-icons.css"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="theme-color" content="#333333"/>
+  <style>
+        /* CSS to scale the video element */
+        video {
+            height: 100vh;
+            width: auto; /* Maintain aspect ratio */
+        }
+
+
+ .someFeature * {
+	box-sizing: border-box;
+}
+
+ .someFeature {
+	font-family: Lato, sans-serif;
+	margin: 0;
+	padding: 1rem;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.someFeature img {
+	display: center;
+	object-fit: cover;
+	transition: transform 1000ms;
+}
+
+.someFeature ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	max-width: 100%;
+	width: 70rem;
+}
+
+.someFeature figure {
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.someFeature figure::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200%;
+	height: 200%;
+	background: rgba(0, 0, 0, 0.5);
+	transform-origin: center;
+	opacity: 0;
+	transform: scale(2);
+	transition: opacity 300ms;
+}
+
+.someFeature a:is(:hover, :focus) figure::after {
+	opacity: 1;
+}
+
+.someFeature a:is(:hover, :focus) figcaption {
+	opacity: 1;
+	transition: opacity 600ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.someFeature figcaption {
+		transform: translate3d(0, 2rem, 0);
+	}
+
+	.someFeature figure::after {
+		border-radius: 50%;
+		opacity: 1;
+		transform: scale(0);
+		transition: transform 900ms;
+	}
+
+	.someFeature a:is(:hover, :focus) figure::after {
+		transform: scale(2.5);
+	}
+
+	.someFeature a:is(:hover, :focus) figcaption {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		transition: opacity 600ms 400ms, transform 600ms 400ms;
+	}
+
+	.someFeature a:is(:hover, :focus) img {
+		transform: scale(1.2);
+	}
+}
+
+
+
+    </style>
+</head>
+<body>
+  <main role="main">
+    <article id="webslides">
+      <section id="slide1">
+        <span class="background" style="background-image:url('/static/images/unsplash.jpeg')"></span>
+        <div class="wrap size-70">
+          <div class="aligncenter">
+            <h2 id="piotr-wera-curriculum"><strong>Piotr Wera Curriculum</strong></h2>
+                My intrests include <svg class="fa-desktop"><use xlink:href="#fa-desktop"></use></svg>
+                Backend development,<svg class="fa-cube">  <use xlink:href="#fa-cube"></use></svg>
+                Containers,<br/> <svg class="fa-cogs"><use xlink:href="#fa-cogs"></use></svg>
+                Kubernetes,<svg class="fa-cloud-download"><use xlink:href="#fa-cloud-download"></use></svg>
+                Cloud
+          </div>
+          </div>
+      </section>
+
+      <section id="slide2">
+              <div class="wrap">
+                <div class="grid">
+                  <div class="column">
+                      <h3 id="coding-experience"><strong>Coding experience</strong></h3>
+                      <code>Polyglot programmers</code>
+                      have the ability to think about challenges from more than one perspective and are more likely to find simple, elegant solutions for those challenges.
+                      <br />
+                      <pre tabindex="0">
+                          <code>Programming languages:
+                          ├── Most experienced with:
+                          │   ├── Java
+                          │   ├── Golang
+                          │   └── Rust
+                          ├── I understand also:
+                          │   └── C++
+                          </code>
+                      </pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="slide3">
+              <div class="wrap">
+                <div class='content-left'>
+                <h2 id="containers--kubernetes">Containers &amp; Kubernetes.</h2>
+                </div>
+                <ul class="flexblock features">
+                for _, p := range pg.ContainersAndKubernetes {
+                    @li(p)
+                }
+                </ul>
+              </div>
+            </section>
+
+            <section id="slide4">
+              <div class="wrap">
+
+            <div class='content-left'>
+              <h2 id="devops">DevOps.</h2>
+            </div>
+
+            <ul class="flexblock features">
+            for _, p := range pg.Devops {
+              @li(p)
+            }
+            </ul>
+            </div>
+            </section>
+
+            <section id="slide5">
+            <div>
+              <video autoplay muted loop>
+                <source src="https://me.pwera.pl/vid-short2.mp4" type="video/mp4"/>
+              </video>
+            </div>
+            </section>
+
+            <section class="features" id="slide6">
+                <h2 id="books-ive-recently-read">Books I&rsquo;ve Recently Read:</h2>
+                <div class="someFeature">
+                    <ul>
+                    for _, p := range pg.Books {
+                        @figure(p)
+                    }
+                    </ul>
+                </div>
+            </section>
+
+            <section class="features" id="slide7">
+                <h2 id="books-ive-recently-read-1">Books I&rsquo;ve Recently Read:</h2>
+                <div class="someFeature">
+                    <ul>
+                        for _, p := range pg.Books2 {
+                          @figure(p)
+                        }
+                    </ul>
+                </div>
+            </section>
+
+            <section class="features" id="slide8">
+                <h2 id="books-want-to-read">Books I want to Read:</h2>
+                <div class="someFeature">
+                    <ul>
+                    for _, p := range pg.WantToRead {
+                      @figure(p)
+                    }
+                    </ul>
+                </div>
+            </section>
+
+            <section id="slide9" class="bg-apple">
+                <span class="background-right-bottom" style="background-image:url('static/images/background.png')"></span>
+                    <div class="wrap">
+                        <h2 id="checkout-my-badges">Checkout my badges</h2>
+                        <p><a href="https://www.credly.com/users/piotrwera/badges"> — <code>Click here</code></a></p>
+                    </div>
+            </section>
+
+            <section id="slide10">
+                <div class="wrap">
+                <h2 id="where-you-can-find-me"><strong>Where you can find me</strong></h2>
+                <ul class="flexblock gallery">
+                    <li><a href="https://github.com/Pwera" title="Github">
+                        <figure>
+                            <img alt="Thumbnail Github" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+                            <figcaption>
+                                <h2>Github</h2>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/pwera" title="LinkedIn">
+                        <figure>
+                            <img alt="Thumbnail LinkedIn" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"/>
+                            <figcaption>
+                                <h2>LinkedIn</h2>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    </li>
+                    <li><a href="mailto:%20piotr.wera.mail@gmail.com" title="Email">
+                        <figure>
+                            <img alt="Thumbnail Email" src="https://webslides.tv/static/images/demos-portfolios.png"/>
+                            <figcaption>
+                                <h2>Email</h2>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    </li>
+                    <li><a href="https://wakatime.com/@549b2c15-9940-4c91-9340-f466a5778386" title="Empty">
+                        <figure>
+                            <img alt="Thumbnail Empty" src="https://wakatime.com/static/img/wakatime.svg"/>
+                            <figcaption>
+                                <h2>WakaTime</h2>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    </li>
+                </ul>
+                </div>
+            </section>
+            <section id="slide11">
+                <div>
+                <pre tabindex="0"><code>My devtools:
+                ├── Kubernetes:
+                │   ├── Local development:
+                │   │   ├── k9s
+                │   │   ├── ctlptlget
+                │   │   └── stern
+                │   └── Distribution:
+                │       ├── rancher-desktop
+                │       ├── k3s
+                │       └── kinD
+                ├── Command line:
+                │   ├── Windows: powershell + starship
+                │   └── Linux: bash + starship
+                ├── Windows package manager:
+                │   └── scoop
+                ├── Linux package manager:
+                │   └── rtx
+                ├── Utility cli:
+                │   ├── bat
+                │   ├── step
+                │   └── jq
+                </code></pre>
+                <div class="grid">
+                <div class="column">
+                </div>
+                </div>
+                </div>
+            </section>
+      </article>
+  </main>
+
+
+<script src="/static/js/webslides.min.js"></script>
+<script>window.ws = new WebSlides({minWheelDelta: 40 ,scrollWait: 450 ,slideOffset: 50 ,});</script>
+<script defer src="/static/js/svg-icons.js"></script>
+</body>
+</html>
+}
+
+
+templ li(rl RepoLink){
+    <li>
+        <h2>
+            <a href={ rl.Repo }><figure><img src={ rl.Img }/></figure>{ rl.Name }</a>
+        </h2>
+    </li>
+}
+
+templ figure(rl RepoLink){
+<li>
+    <a href={ rl.Repo }>
+        <figure>
+            <img src={ rl.Img }/>
+        </figure>
+    </a>
+</li>
+}
