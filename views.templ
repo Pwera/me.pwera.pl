@@ -202,7 +202,7 @@ templ page(pg PageData){
             <section id="slide5">
             <div>
               <video autoplay muted loop>
-                <source src="https://me.pwera.pl/vid-short2.mp4" type="video/mp4"/>
+                <source src="/static/vid/vid-short2.mp4" type="video/mp4"/>
               </video>
             </div>
             </section>
@@ -291,36 +291,199 @@ templ page(pg PageData){
                 </ul>
                 </div>
             </section>
-            <section id="slide11">
-                <div>
-                <pre tabindex="0"><code>My devtools:
-                ├── Kubernetes:
-                │   ├── Local development:
-                │   │   ├── k9s
-                │   │   ├── ctlptlget
-                │   │   └── stern
-                │   └── Distribution:
-                │       ├── rancher-desktop
-                │       ├── k3s
-                │       └── kinD
-                ├── Command line:
-                │   ├── Windows: powershell + starship
-                │   └── Linux: bash + starship
-                ├── Windows package manager:
-                │   └── scoop
-                ├── Linux package manager:
-                │   └── rtx
-                ├── Utility cli:
-                │   ├── bat
-                │   ├── step
-                │   └── jq
-                </code></pre>
-                <div class="grid">
-                <div class="column">
-                </div>
-                </div>
-                </div>
-            </section>
+	      <section id="slide11">
+          <div class="wrap">
+            <h3>My devtools:</h3>
+            <p><code>Kubernetes</code> local development:</p>
+            <ul class="flexblock blink">
+              <li>
+                <a href="https://github.com/derailed/k9s">
+                  <h2>
+                    <svg class="fa-bar-chart">
+                      <use xlink:href="#fa-bar-chart"></use>
+                    </svg>
+                    k9s
+                  </h2>
+                  🐶 Manage Your Kubernetes Clusters In Style
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/tilt-dev/ctlptl">
+                  <h2>
+                    <svg class="fa-balance-scale">
+                      <use xlink:href="#fa-balance-scale"></use>
+                    </svg>
+                    ctlptlget
+                  </h2>
+                  🧩Making local Kubernetes clusters fun and easy to set up
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/stern/stern">
+                  <h2>
+                    <svg class="fa-cog">
+                      <use xlink:href="#fa-cog"></use>
+                    </svg>
+                    stern
+                  </h2>
+                  ⎈ Multi pod and container log tailing for Kubernetes
+                </a>
+              </li>
+            </ul>
+            <hr />
+	    <p><code>Kubernetes</code> distributons:</p>
+            <ul class="flexblock border">
+              <li>
+                <a href="https://rancherdesktop.io/"> 
+                <h2>
+                  <svg class="fa-bar-chart">
+                    <use xlink:href="#fa-bar-chart"></use>
+                  </svg>
+                  rancher-desktop
+                </h2>
+                </a>
+                🤠Container Management and Kubernetes on the Desktop
+              </li>
+              <li>
+                <a href="https://k3s.io/"> 
+                <h2>
+                  <svg class="fa-balance-scale">
+                    <use xlink:href="#fa-balance-scale"></use>
+                  </svg>
+                  k3s
+                </h2>
+                🌐The certified Kubernetes distribution built for IoT & Edge computing
+                </a>
+              </li>
+              <li>
+                <a href="https://kind.sigs.k8s.io/"> 
+                <h2>
+                  <svg class="fa-cog">
+                    <use xlink:href="#fa-cog"></use>
+                  </svg>
+                  kinD
+                </h2>
+                🌟Tool for running local Kubernetes clusters using Docker container “nodes”
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section id="slide12">
+          <div class="wrap">
+            <h3>My devtools:</h3>
+            <p><code>cli utilities:</code></p>
+            <ul class="flexblock blink">
+              <li>
+                <a href="https://github.com/starship/starship">
+                  <h2>
+                    <svg class="fa-bar-chart">
+                      <use xlink:href="#fa-bar-chart"></use>
+                    </svg>
+                    starship
+                  </h2>
+                  🌠🚀The minimal, blazing-fast, and infinitely customizable prompt for any shell
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/extrawurst/gitui">
+                  <h2>
+                    <svg class="fa-balance-scale">
+                      <use xlink:href="#fa-balance-scale"></use>
+                    </svg>
+                    gitui
+                  </h2>
+                  💥Blazing fast terminal-ui for git written in rust 🦀
+                </a>
+              </li>
+              <li>
+                <a href="https://scoop.sh/">
+                  <h2>
+                    <svg class="fa-cog">
+                      <use xlink:href="#fa-cog"></use>
+                    </svg>
+                    scoop
+                  </h2>
+                  🥄A command-line installer for Windows.
+                </a>
+              </li>
+            </ul>
+            <ul class="flexblock border">
+              <li>
+                <a href="https://github.com/jdx/mise">
+                <h2>
+                  <svg class="fa-bar-chart">
+                    <use xlink:href="#fa-bar-chart"></use>
+                  </svg>
+                  mise
+                </h2>
+                🚀Dev tools, env vars, task runner
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sharkdp/bat">
+                <h2>
+                  <svg class="fa-balance-scale">
+                    <use xlink:href="#fa-balance-scale"></use>
+                  </svg>
+                  bat
+                </h2>
+                🦇A cat(1) clone with wings
+                </a>
+              </li>
+              <li>
+                <a href="https://smallstep.com/cli/index.html">
+                <h2>
+                  <svg class="fa-cog">
+                    <use xlink:href="#fa-cog"></use>
+                  </svg>
+                  step
+                </h2>
+                🔍The command-line interface for all things Smallstep
+                </a>
+              </li>
+            </ul>
+
+            <ul class="flexblock border">
+              <li>
+                <a href="https://mutagen.io/">
+                <h2>
+                  <svg class="fa-bar-chart">
+                    <use xlink:href="#fa-bar-chart"></use>
+                  </svg>
+                  mutagen
+                </h2>
+                🧬Mutagen provides real-time file synchronization and flexible network forwarding
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/jesseduffield/lazydocker">
+                <h2>
+                  <svg class="fa-balance-scale">
+                    <use xlink:href="#fa-balance-scale"></use>
+                  </svg>
+                  lazydocker
+                </h2>
+                😴🐳The lazier way to manage everything docker
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/xxxserxxx/gotop">
+                <h2>
+                  <svg class="fa-cog">
+                    <use xlink:href="#fa-cog"></use>
+                  </svg>
+                  gotop
+                </h2>
+                🎢A terminal based graphical activity monitor inspired by gtop and vtop
+                </a>
+              </li>
+            </ul>
+          </div>
+        <!-- .end .wrap -->
+        </section>
       </article>
   </main>
 

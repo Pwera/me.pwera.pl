@@ -59,6 +59,7 @@ func main() {
 			oreilly2("https://learning.oreilly.com/library/view/certified-kubernetes-security/9781098132965/"),
 			oreilly2("https://learning.oreilly.com/library/view/kubernetes-security-and/9781098107093/"),
 			oreilly2("https://learning.oreilly.com/library/view/kubernetes-best-practices/9781098142155/"),
+			oreilly2("https://learning.oreilly.com/library/view/practical-cloud-native/9781098118563/"),
 			{Repo: "https://www.amazon.pl/DevOps-Containers-Security-Monitoring-English/dp/9389423538", Img: "https://images-na.ssl-images-amazon.com/images/I/41IVS-yNotL._SX403_BO1,204,203,200_.jpg"},
 		}
 
@@ -81,7 +82,6 @@ func main() {
 			oreilly2("https://learning.oreilly.com/library/view/making-sense-of/9781617298004/"),
 			oreilly2("https://learning.oreilly.com/library/view/a-developers-essential/9781803234366/"),
 			oreilly2("https://learning.oreilly.com/library/view/managing-kubernetes-resources/9781803242897/"),
-			oreilly2("https://learning.oreilly.com/library/view/practical-cloud-native/9781098118563/"),
 			oreilly2("https://learning.oreilly.com/library/view/practical-linux-devops/9781484283189/"),
 			oreilly2("https://learning.oreilly.com/library/view/learn-wireshark/9781803231679/"),
 			oreilly2("https://learning.oreilly.com/library/view/lean-devops-a/9780133853643/"),
